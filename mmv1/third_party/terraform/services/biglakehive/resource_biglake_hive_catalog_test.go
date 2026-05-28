@@ -46,6 +46,8 @@ func TestAccBiglakeHiveHiveCatalog_biglakeHiveCatalog_update(t *testing.T) {
 
 	acctest.VcrTest(t, resource.TestCase{
 		PreCheck:                 func() { acctest.AccTestPreCheck(t) },
+		ProtoV5ProviderFactories: acctest.ProtoV5ProviderFactoriesAndBeta(t),
+		CheckDestroy:             testAccCheckBiglakeHiveHiveCatalogDestroyProducer(t),
 		ProtoV5ProviderFactories: acctest.ProtoV5ProviderFactories(t),
 		CheckDestroy:             testAccCheckBiglakeHiveHiveCatalogDestroyProducer(t),
 		Steps: []resource.TestStep{
